@@ -1,0 +1,330 @@
+It is considered good programming practice to always declare variables before use.
+
+Declaration: Creating a variable (without necessarily giving it a value).
+// Declaration
+let name;
+var age;
+const country; // This will cause an error because const requires initialization.
+
+Assignment: Giving a declared variable a value.
+// Assignment
+name = "Alice";
+age = 25;
+
+Initialization: Declaring a variable and assigning it an initial value at the same time.
+// Initialization
+const city = "New York";
+let hobby = "Reading";
+var isEmployed = true;
+ 
+JavaScript Variables can be declared 
+        Using var
+        Using let
+        Using const 
+
+VAR 
+
+The var keyword was used in all JavaScript code from 1995 to 2015.
+
+The var keyword should only be used in code written for older browsers.
+
+Example
+          var  = 5;
+          var y =6;
+          var z = x + y;
+
+Variables declared with the var always have Global Scope.
+
+Variables declared with var inside a { } block can be accessed from outside the block:
+
+         {
+          var x = 2;
+         }
+
+Variables defined with var can be redeclared.
+
+          var x = "John Doe";
+
+          var x = 0;
+
+Redeclaring a variable using the var keyword can impose problems.
+
+Redeclaring a variable inside a block will also redeclare the variable outside the block:
+
+         var x = 10;
+         // Here x is 10
+
+         {
+         var x = 2;
+         // Here x is 2
+         }
+         // Here x is 2
+
+
+LET
+
+ Variables declared with let must be Declared before use.
+
+ Variables declared with let cannot be Redeclared in the same scope.
+    (let x = "John Doe";
+
+    let x = 0;)
+
+Variables declared with let have Block Scope.
+Variables declared inside a { } block cannot be accessed from outside the block:
+
+EX:
+
+{
+  let x = 2;
+}
+// x can NOT be used here.
+
+Variables defined with let can not be redeclared.
+
+You can not accidentally redeclare a variable declared with let.
+
+EX: 
+let x = "John Doe";
+
+let x = 0;
+
+var x= 2;
+
+OR 
+{
+    let x = "John Doe";
+
+    let x = 0;
+
+    var x = 0;
+}
+
+
+Redeclaring a variable inside a block will not redeclare the variable outside the block:
+
+EX:
+let x = 10;
+// Here x is 10
+
+{
+let x = 2;
+// Here x is 2
+}
+
+// Here x is 10
+
+
+JavaScript Const:
+
+
+A variable defined with the const keyword cannot be reassigned.
+JavaScript const variables must be assigned a value when they are declared:
+Example:
+const PI = 3.141592653589793; // Must be Assigned.
+PI = 3.14;      // This will give an error.
+PI = PI + 10;   // This will also give an error.
+
+Always declare a variable with const when you know that the value should not be changed.
+
+A new Array
+A new Object
+A new Function
+A new RegExp
+
+
+Constant Arrays:
+Example
+// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars[0] = "Toyota";
+
+// You can add an element:
+cars.push("Audi");
+
+But you can NOT reassign the array:
+
+Example
+const cars = ["Saab", "Volvo", "BMW"];
+
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+Constant Objects:
+// You can create a const object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// You can change a property:
+car.color = "red";
+
+// You can add a property:
+car.owner = "Johnson";
+
+But you can NOT reassign the object:
+
+Example
+const car = {type:"Fiat", model:"500", color:"white"};
+
+car = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+
+Reassigning an existing const variable, in the same scope, is not allowed:
+
+Example
+const x = 2;     // Allowed
+x = 2;           // Not allowed
+var x = 2;       // Not allowed
+let x = 2;       // Not allowed
+const x = 2;     // Not allowed
+
+{
+  const x = 2;   // Allowed
+  x = 2;         // Not allowed
+  var x = 2;     // Not allowed
+  let x = 2;     // Not allowed
+  const x = 2;   // Not allowed
+}
+
+Redeclaring a variable with const, in another scope, or in another block, is allowed:
+
+Example
+const x = 2;       // Allowed
+
+{
+  const x = 3;   // Allowed
+}
+
+{
+  const x = 4;   // Allowed
+}
+
+JavaScript Scope:
+
+Scope determines the accessibility (visibility) of variables.
+
+JavaScript variables have 3 types of scope:
+
+Block scope
+Function scope
+Global scope
+
+Block Scope:
+
+Before ES6 (2015), JavaScript variables had only Global Scope and Function Scope.
+
+ES6 introduced two important new JavaScript keywords: let and const.
+
+These two keywords provide Block Scope in JavaScript.
+
+Variables declared inside a { } block cannot be accessed from outside the block:
+
+Example
+{
+  let x = 2;
+}
+let y =2;
+// x can NOT be used here  i.e x + y error.
+
+Function Scope:
+
+Variables defined inside a function are not accessible (visible) from outside the function.
+
+Variables declared with var, let and const are quite similar when declared inside a function.
+
+
+
+function outerFunction() {
+    let outerVariable = "I'm outside!";
+
+    function innerFunction() {
+        const innerVariable = "I'm inside!";
+        console.log(outerVariable); // This will log: "I'm outside!"
+        console.log(innerVariable); // This will log: "I'm inside!"
+    }
+
+    innerFunction();
+
+    console.log(outerVariable); // This will log: "I'm outside!"
+    // console.log(innerVariable); // This will cause an error: Uncaught ReferenceError: innerVariable is not defined
+}
+
+outerFunction();
+// console.log(outerVariable); // This will cause an error: Uncaught ReferenceError: outerVariable is not defined
+
+Local Scope:
+Variables declared within a JavaScript function, are LOCAL to the function:
+
+Example
+// code here can NOT use  innerVariable
+function myFunction() {
+  let innerVariable =  "I'm inside!";
+  // code here CAN use innerVariable
+}
+
+// code here can NOT use innerVariable
+
+Global Scope:
+
+Variables declared Globally (outside any function) have Global Scope.
+
+Global variables can be accessed from anywhere in a JavaScript program.
+
+Variables declared with var, let and const are quite similar when declared outside a block.
+
+Example
+let carName = "Volvo";
+// code here can use carName
+
+function myFunction() {
+// code here can also use carName
+}
+
+
+JavaScript Hoisting:
+
+Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+
+In JavaScript, a variable can be declared after it has been used.
+
+Example : x = 5; // Assign 5 to x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element
+
+var x; // Declare x
+
+
+The let and const Keywords:
+
+
+variables declared with let and const do not receive a value or become usable until the execution of the code reaches their declaration.
+
+Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared.
+
+Using a let variable before it is declared will result in a ReferenceError.
+
+The variable is in a "temporal dead zone" from the start of the block until it is declared.The period between the start of the block scope and the actual declaration of the variable is called the Temporal Dead Zone. During this time, the variable exists but cannot be accessed or used.
+
+When a variable is hoisted, its declaration is moved to the top of its scope (block or function) during the compile phase. However, only the declaration is hoisted, not the initialization.
+
+Example:
+{
+  console.log(x); // ReferenceError: Cannot access 'x' before initialization
+  let x = 10;
+  console.log(x); // 10
+}
+
+{
+  const y = 20;
+  console.log(y); // 20
+}
+
+Strict mode:
+
+When strict mode is enabled, it changes the behavior of JavaScript in some important ways, such as preventing the use of 
+undeclared variables and disallowing certain syntax that could lead to bugs or make the code harder to maintain.
+
+
+ex:
+"use strict";
+// Your code here
