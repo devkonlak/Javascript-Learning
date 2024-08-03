@@ -1,0 +1,136 @@
+JavaScript Strings:
+
+--Strings are for storing text
+
+--Strings are written with quotes
+--A JavaScript string is zero or more characters written inside quotes.
+
+--You can use single or double quotes:
+Example
+let carName1 = "Volvo XC60";  // Double quotes
+let carName2 = 'Volvo XC60';  // Single quotes
+
+--Quotes Inside Quotes
+You can use quotes inside a string, as long as they don't match the quotes surrounding the string:
+
+Example
+let answer1 = "It's alright";
+let answer2 = "He is called 'Johnny'";
+let answer3 = 'He is called "Johnny"';
+
+-- Escape Characters:
+The backslash escape character (\) turns special characters into string characters:
+Examples:
+=>\" inserts a double quote in a string:
+let text = "We are the so-called \"Vikings\" from the north.";
+=>\' inserts a single quote in a string:
+let text= 'It\'s alright.';
+=>\\ inserts a backslash in a string:
+let text = "The character \\ is called backslash.";
+
+--Template Strings
+
+Templates are strings enclosed in backticks (`This is a template string`). => key below escape
+
+Templates allow single and double quotes inside a string:
+
+let text = `He's often called "Johnny"`;
+
+--Template Literals:
+String Interpolation
+
+You can embed variables and expressions directly within the string.
+
+Example:
+let name = "Alice";
+let age = 25;
+let greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+
+console.log(greeting); // Output: Hello, my name is Alice and I am 25 years old.
+
+Example:
+let a = 5;
+let b = 10;
+let sum = `${a} + ${b} = ${a + b}`;
+
+console.log(sum); // Output: 5 + 10 = 15
+
+--String Length
+To find the length of a string, use the built-in length property:
+
+Example
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+
+..charAt()
+The charAt() method returns the character at a specified index (position) in a string.
+Examples:
+Get the first character in a string:
+let text = "HELLO WORLD";
+let letter = text.charAt(0);
+
+Get the last character in a string:
+let text = "HELLO WORLD";
+let letter = text.charAt(text.length-1);
+
+..concat()
+
+The concat() method joins two or more strings.
+
+The concat() method does not change the existing strings.
+
+The concat() method returns a new string
+
+Examples:
+Join two strings:
+
+let text1 = "sea";
+let text2 = "food";
+let result = text1.concat(text2);
+
+.. indexOf()
+The indexOf() method returns the position of the first occurrence of a value in a string.
+
+The indexOf() method returns -1 if the value is not found.
+
+The indexOf() method is case sensitive.
+
+=>Search a string for "welcome":
+
+let text = "Hello world, welcome to the universe.";
+let result = text.indexOf("welcome");
+
+=>Find the first occurrence of "e", starting at position 5:
+
+let text = "Hello world, welcome to the universe.";
+text.indexOf("e", 5);
+
+..slice()
+=> slice() extracts a part of a string and returns the extracted part in a new string.
+
+The method takes 2 parameters: start position, and end position (end not included).
+
+Example
+=> Slice out a portion of a string from position 7 to position 13:
+
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(7, 13);
+
+..split()
+=> A string can be converted to an array with the split() method:
+
+Example
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
+
+..Converting to Upper and Lower Case
+=>avaScript String toUpperCase()
+Example
+let text1 = "Hello World!";
+let text2 = text1.toUpperCase();
+
+=>JavaScript String toLowerCase()
+Example
+let text1 = "Hello World!";       // String
+let text2 = text1.toLowerCase();  // text2 is text1 converted to lower
